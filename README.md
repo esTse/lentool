@@ -8,7 +8,6 @@ python3 lentool.py -t http://targetexample.com/?start -u http://myserverexample.
 --target, -t: Target URL with param.  
 --url, -u: Web server hosting the payload.
 ```
-In the extras folder you can find an example using flask to host the payload.
  # POC
  Vulnerable application:
  ```php
