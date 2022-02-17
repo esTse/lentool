@@ -48,4 +48,8 @@ if __name__ == '__main__':
  ```
  python3 lentool.py -t http://127.0.0.1:1808?start -u 127.0.0.1:4321
  ```
- ![2022-02-17_15-40-38 (online-video-cutter com)](https://user-images.githubusercontent.com/40002393/154507056-1b5bea67-38ca-4b2d-bede-90d4069ca52d.gif)
+ 
+
+https://user-images.githubusercontent.com/40002393/154507901-35ff8c8d-dc28-4fff-9064-d1952660efd9.mp4
+
+
