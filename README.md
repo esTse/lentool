@@ -17,10 +17,17 @@ optional arguments:
   -d DELAY, --delay DELAY
                         Time to wait between requests in tenths of a second
 ```
- # POC
- ## Vulnerable application:
- ```php
- <?php
+
+# Install
+
+```
+pip install git+https://github.com/esTse/lentool.git
+```
+
+# POC
+## Vulnerable application:
+```php
+<?php
  
 $sandbox = '/home/estse/sandbox/';
 @mkdir($sandbox);
