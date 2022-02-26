@@ -1,6 +1,6 @@
 # Description
 Tool to RCE in limited input length webshells.  
-It pipes the payload to sh, you can customize it with a few changes in the source code (python is already done, just uncomment it), also you could modify it to execute commands directly.
+It pipes the payload to sh, you can customize it with a few changes in the source code, also you could modify it to execute commands directly.
 
 # Usage
 ```
